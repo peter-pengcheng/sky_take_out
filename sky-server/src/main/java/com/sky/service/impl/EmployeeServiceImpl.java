@@ -100,5 +100,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         return pageResult;
     }
 
-
+    @Override
+    public void update(Integer status, Long id) {
+        Employee employee = Employee.builder().status(status).id(id).build();
+        System.out.println("employee----"+employee.toString());
+        employeeMapper.update(employee);
+    }
 }
